@@ -25,6 +25,7 @@ def factorize(n):
             return
         i += 1
 
+
 def read_file():
     '''
     reads a file passed into the program
@@ -50,6 +51,7 @@ def read_file():
                     print(f"Invalid input in file: {line.strip()}")
     except FileNotFoundError:
         print(f"File {file_name} not found!")
+
 
 if __name__ == '__main__':
     read_file()
