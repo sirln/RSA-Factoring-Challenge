@@ -33,6 +33,8 @@ def read_file():
     ------
     FileNotFoundError
         if file passed as argument 1 is not available / not found.
+    ValueError
+        if value/number in line is not a valid integer value.
     '''
     if len(sys.argv) != 2:
         print("Usage: factors <file>")
@@ -41,8 +43,11 @@ def read_file():
     try:
         with open(file_name, 'r') as file:
             for line in file:
-                num = int(line.strip())
-                factorize(num)
+                try:
+                    num = int(line.strip())
+                    factorize(num)
+                except ValueError:
+                    print(f"Invalid input in file: {line.strip()}")
     except FileNotFoundError:
         print(f"File {file_name} not found!")
 
