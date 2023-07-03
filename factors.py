@@ -3,6 +3,7 @@
 My Factorization module
 '''
 import sys
+import math
 
 
 def factorize(n):
@@ -17,7 +18,7 @@ def factorize(n):
     if n < 2:
         return
     x = None
-    for i in range(2, int(n ** 0.5) + 1):
+    for i in range(2, math.isqrt(n) + 1):
         if not (n % i):
             x = i
             break
