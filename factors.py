@@ -14,16 +14,16 @@ def factorize(n):
     n : int
         number to be factorized
     '''
-    i = 2
-
     if n < 2:
         return
-    while (i * i <= n):
+    x = None
+    for i in range(2, int(n ** 0.5) + 1):
         if not (n % i):
-            j = n // i
-            print(f"{n}={j}*{i}")
-            return
-        i += 1
+            x = i
+            break
+    if x is not None:
+        y = n // x
+        print(f"{n}={y}*{x}")
 
 
 def read_file():
