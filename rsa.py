@@ -3,6 +3,7 @@
 My Factorization module
 '''
 import sys
+import math
 
 
 def is_prime(n):
@@ -40,13 +41,14 @@ def rsa(n):
     '''
     if n < 2:
         return
-
-    for i in range(2, int(n ** 0.5) + 1):
+    x = None
+    for i in range(2, math.isqrt(n) + 1):
         if not (n % i) and is_prime(i):
             x = i
             break
-    y = n // x
-    print(f"{n}={y}*{x}")
+    if x is not None:
+        y = n // x
+        print(f"{n}={y}*{x}")
 
 
 def read_file():
